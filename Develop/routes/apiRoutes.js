@@ -1,14 +1,13 @@
 const express = require('express')
-const path = require('path');
 const router = express.Router();
-const fs = require("fs");
-let data = require('../db/db.json');
-const app = express();
+const uuid = require('uuid');
+const { readAndAppend, writeToFile ,readFromFile, } = require('../utils/fsUtils');
 
-app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 
+router.use(express.static('public'));
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 
 
 module.exports = router;
+
